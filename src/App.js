@@ -6,12 +6,7 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 import { GlobalProvider } from './context/GlobalState';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+
 // import { auth } from "./firebase_config";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -32,23 +27,11 @@ const auth = firebase.auth();
 
 function App() {
 
-  // const register = async () => {
-
-  // };
-  
-  // const login = async () => {
-  
-  // };
-  
-  // const logout = async () => {
-    
-  // };
   const [user] = useAuthState(auth);
 
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
         <SignOut />
       </header>
 
@@ -69,8 +52,11 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+    <div className='loginPage'>
+<h1 className='tracker'>To tracker your expense 💵<br/> Sign in</h1>
+<br/><br/>
+<img className='google' src="https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png"></img><button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+<br/><br/></div>
     </>
   )
 
