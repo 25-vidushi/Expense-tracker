@@ -9,6 +9,19 @@ import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 
+const register = () => {
+
+}
+
+const login = () => {
+
+}
+
+const logout = () => {
+  
+}
+
+
 function App() {
   return (
     <GlobalProvider>
